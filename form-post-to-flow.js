@@ -1,25 +1,26 @@
 console.log("connected");
-
-function getParamValuesByName(querystring) {
-    var qstring = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for (var i = 0; i < qstring.length; i++) {
-        var urlparam = qstring[i].split('=');
-        if (urlparam[0] == querystring) {
-            return urlparam[1];
-        }
-    }
-}
-
 function submitFlowDemoForm() {
-    $("form.FlowDemo").hide();
+    $("div.FlowDemo").hide();
     $("div.loading").show();
-    if (location.hostname == "htmldev.envisionit.com") {
-        var url = "https://prod-25.westus.logic.azure.com:443/workflows/3fa88ac8a6b948d0a79d092e2be01257/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7ufkNGWxMxbDJG2ukoXrRmlmpbuGql8yKI87D8yAsjs";
-    }
+    var url = "https://prod-25.westus.logic.azure.com:443/workflows/3fa88ac8a6b948d0a79d092e2be01257/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7ufkNGWxMxbDJG2ukoXrRmlmpbuGql8yKI87D8yAsjs";
     var item = {
         "__metadata": {
         },
     };
+    var termsChecked = $("input#AcceptTerms").prop("checked");
+    var terms = $("input#AcceptTerms");
+    if (termsChecked == true) {
+        terms.attr("value", "Yes");
+    } else {
+        terms.attr("value", "No");
+    }
+    var mailingChecked = $("input#MailingList").prop("checked");
+    var mailing = $("input#MailingList");
+    if (mailingChecked == true) {
+        mailing.attr("value", "Yes");
+    } else {
+        mailing.attr("value", "No");
+    }
     item["EventName"] = $("#EventName").val();
     item["FirstName"] = $("#FirstName").val();
     item["LastName"] = $("#LastName").val();
