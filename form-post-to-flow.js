@@ -2,7 +2,7 @@ console.log("connected");
 function submitFlowDemoForm() {
     $("div.FlowDemo").hide();
     $("div.loading").show();
-    var url = "https://prod-25.westus.logic.azure.com:443/workflows/3fa88ac8a6b948d0a79d092e2be01257/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7ufkNGWxMxbDJG2ukoXrRmlmpbuGql8yKI87D8yAsjs";
+    var url = "https://prod-98.westus.logic.azure.com:443/workflows/0353b07c8649483fa5fbd8717ba50ac3/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4bxCcUaYxI53Bk8g68vPVJhY657-NsJU7SpzmNBjCGM";
     var item = {
         "__metadata": {
         },
@@ -22,6 +22,7 @@ function submitFlowDemoForm() {
         mailing.attr("value", "No");
     }
     item["EventName"] = $("#EventName").val();
+    item["Status"] = $("#Status").val();
     item["FirstName"] = $("#FirstName").val();
     item["LastName"] = $("#LastName").val();
     item["Email"] = $("#Email").val();
