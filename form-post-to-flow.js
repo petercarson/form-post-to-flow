@@ -2,7 +2,7 @@ console.log("connected");
 function submitFlowDemoForm() {
     $("div.FlowDemo").hide();
     $("div.loading").show();
-    var url = "https://prod-19.centralus.logic.azure.com:443/workflows/63aab331d9574236afe1ff674a91d312/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VMpiU0KaW3W1MZBg6czXZX7NG-TQx0-ZaDoOgXoIenI";
+    var url = "https://prod-98.westus.logic.azure.com:443/workflows/0353b07c8649483fa5fbd8717ba50ac3/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4bxCcUaYxI53Bk8g68vPVJhY657-NsJU7SpzmNBjCGM";
     var item = {
         "__metadata": {
         },
